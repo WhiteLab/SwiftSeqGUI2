@@ -206,4 +206,4 @@ def get_program_set(request, step_id, program_set_id):
 
 def get_parameters_line(request, parameter_name):
     context = {'parameter_name': parameter_name}
-    return render(request, 'swiftseqgui2/ajax/parameters-line.html', context)
+    return render(request, 'swiftseqgui2/ajax/parameters_line.html', context)

@@ -1,0 +1,31 @@
+{% extends 'swiftseqgui2/base.html' %}
+{% block content %}
+<section class="swiftseq-section">
+    <div class="container">
+        <div class="row swiftseq-text-centered">
+            <h1>Experience the Raw Power and Speed</h1>
+            <h3>You're so close, so close...</h3>
+        </div>
+    </div>
+</section>
+<section class="swiftseq-section-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-primary swiftseq-no-rounded">
+                    <div class="panel-heading swiftseq-no-rounded">
+                        <div class="panel-title">SwiftSeq Downloads</div>
+                    </div>
+                    <div class="panel-body">
+                        {% for software in softwares %}
+                        <p>
+                            <a href="/swiftseq/media/{{ software.software_file }}">{{ software.name }}</a>
+                        </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

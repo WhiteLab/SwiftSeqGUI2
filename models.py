@@ -47,3 +47,21 @@ class Parameter(models.Model):
 
     def __unicode__(self):
         return self.name + ' | Parameter for Program: ' + self.program.name
+
+
+class PrebuiltWorkflow(models.Model):
+    title = models.CharField(max_length=256, verbose_name='Prebuilt Workflow Title')
+    description = models.TextField(verbose_name='Prebuilt Workflow Description')
+    workflow_file = models.FileField()
+
+    def __unicode__(self):
+        return self.title
+
+
+class SoftwareVersion(models.Model):
+    name = models.CharField(max_length=128, verbose_name='Software Name')
+    sortable_version_number = models.SmallIntegerField()
+    software_file = models.FileField()
+
+    def __unicode__(self):
+        return self.name

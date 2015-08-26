@@ -54,7 +54,7 @@
 <div class="container">
     <div class="row">
         <!-- Column for Steps -->
-        <div class="col-md-4">
+        <div id="sticker" class="col-md-4">
             <h3 style="margin-top:0">Available Options:</h3>
             <ul class="list-group">
                 {% for step in steps %}
@@ -69,7 +69,7 @@
             </ul>
         </div>
         <!-- Column for Programs and Parameters -->
-        <div class="col-md-8">
+        <div id="rightCol" class="col-md-8">
             {% for step in steps %}
             <div class="panel panel-primary swiftseq-no-rounded panel-program" data-stepid="{{ step.id }}">
                 <div class="panel-heading swiftseq-no-rounded">

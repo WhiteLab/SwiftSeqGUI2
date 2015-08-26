@@ -1,7 +1,7 @@
 /**
  * Created by dfitzgerald on 8/14/15.
  */
-(function($) {
+;(function($) {
 
 var numProgramSets = 0;
 
@@ -75,7 +75,12 @@ $.widget('swiftseq.ProgramSet', {
                 $parameterSelect.select2({
                     data: dataJson,
                     placeholder: 'Select a parameter...',
-                    allowClear: true
+                    allowClear: true,
+                    tags: true,
+                    createTag: function(term){
+                        console.log(term);
+                        return {id: '-1', text: term.term};
+                    }
                 }).on('change', function () {
                     widget._addParameter(programId);
                 });

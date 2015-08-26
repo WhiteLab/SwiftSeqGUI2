@@ -27,7 +27,27 @@ $(document).ready(function(){
         $('<iframe>').attr({
             src: '/swiftseq/generate-workflow/process-workflow/?' + $('form').serialize(),
             style: 'display:none'
-        }).appendTo($('body'));
-        window.setTimeout(function(){window.location.replace('/swiftseq/generate-workflow/download-complete/');}, 500);
+        }).appendTo($('body')).ready(function(){
+            window.location.replace('/swiftseq/generate-workflow/download-complete/');
+        });
+    });
+
+    /* Make available options box sticky */
+    var sticker = $('#sticker');
+    var stickerWidth = sticker.outerWidth(true);
+    sticker.css('width', stickerWidth);
+    var rightCol = $('#rightCol');
+    var pos = sticker.position();
+    $(window).scroll(function(){
+        var windowpos = $(window).scrollTop();
+        if(windowpos >= pos.top - 50){
+            sticker.addClass('stick');
+            rightCol.addClass('col-md-offset-4');
+        }else{
+            sticker.removeClass('stick');
+            rightCol.removeClass('col-md-offset-4');
+        }
+    }).resize(function(){
+        stickerWidth = sticker.outerWidth(true);
     });
 });

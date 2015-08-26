@@ -73,3 +73,24 @@ h1,h2,h3,h4,h5,h6{
 .swiftseq-no-rounded{
     border-radius: 0;
 }
+
+/* Stickem rules */
+/*.stickem-container {*/
+  /*position: relative;*/
+/*}*/
+
+/*.stickem {*/
+    /*position: fixed;*/
+    /*top: 0;*/
+/*}*/
+
+/*.stickem-end {*/
+    /*bottom: 40px;*/
+    /*position: absolute;*/
+    /*right: 0;*/
+/*}*/
+
+.stick{
+    position: fixed;
+    top: 50px;
+}
