@@ -1,7 +1,10 @@
+{% load staticfiles %}
 <nav class="container-fluid swiftseq-navbar">
     <div class="navbar-header">
         <span class="navbar-brand">
-            <a href="/swiftseq/" class="swiftseq-nav-logo">SwiftSeq &lt;logo here&gt;</a>
+            <a href="/swiftseq/" class="swiftseq-nav-logo">
+                <img src="{% static 'images/logo.png' %}" style="margin-top:-30px;max-height:75px"/>
+            </a>
         </span>
     </div>
     <div class="collapse navbar-collapse navbar-right">
