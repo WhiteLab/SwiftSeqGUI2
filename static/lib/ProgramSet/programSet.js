@@ -24,7 +24,7 @@ $.widget('swiftseq.ProgramSet', {
         widget.programSetId = numProgramSets;
         numProgramSets++;
         /* Get program set template */
-        $.get('/swiftseq/generate-workflow/generate/get-program-set/' + this.options.stepId + '/'
+        $.get('/generate-workflow/generate/get-program-set/' + this.options.stepId + '/'
                 + widget.programSetId + '/', function (data) {
             var container = widget.element;
             widget.$widgetContainer = container;
@@ -42,7 +42,7 @@ $.widget('swiftseq.ProgramSet', {
             widget.$programSelectBox.on('change', function () {
                 widget.currentProgramId = widget.$programSelectBox.val();
                 widget._clearParameters();
-                $.getJSON('/swiftseq/generate-workflow/generate/get-program-attrs/' + widget.currentProgramId + '/', function(data){
+                $.getJSON('/generate-workflow/generate/get-program-attrs/' + widget.currentProgramId + '/', function(data){
                     widget.$widgetContainer.find('a.help-url').attr('href', data.help_url);
                     widget.$widgetContainer.find('input.walltime').val(data.walltime);
                 });
@@ -61,7 +61,7 @@ $.widget('swiftseq.ProgramSet', {
 
         /* Add a new parameters line */
         var parameterName = 'programSet-' + widget.programSetId + '__parameter-' + widget.parametersLines.length;
-        $.get('/swiftseq/generate-workflow/generate/get-parameters-line/' + parameterName + '/', function (data) {
+        $.get('/generate-workflow/generate/get-parameters-line/' + parameterName + '/', function (data) {
             /* Append parameters line to container */
             var $parametersLine = $(data);
             widget.$parametersContainer.append($parametersLine);
@@ -69,7 +69,7 @@ $.widget('swiftseq.ProgramSet', {
 
             /* Get parameters for the current program */
             var programId = widget.currentProgramId;
-            $.getJSON('/swiftseq/generate-workflow/generate/get-parameters-for-program/' + programId + '/', function (dataJson) {
+            $.getJSON('/generate-workflow/generate/get-parameters-for-program/' + programId + '/', function (dataJson) {
                 var $parameterSelect = $parametersLine.find('select').first();
                 /* Turn parameter line select box into Select2 */
                 $parameterSelect.select2({

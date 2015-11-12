@@ -9,7 +9,7 @@ import time
 
 
 def index(request):
-    return HttpResponseRedirect('/swiftseq/generate-workflow/questions/')
+    return HttpResponseRedirect('/generate-workflow/questions/')
 
 
 def questions(request):
