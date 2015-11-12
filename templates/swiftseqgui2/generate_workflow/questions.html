@@ -14,7 +14,7 @@
 </section>
 <section class="swiftseq-section">
 <div class="container">
-    <form method="post" action="/swiftseq/generate-workflow/generate/">
+    <form method="post" action="/generate-workflow/generate/">
         {% csrf_token %}
         <div class="row">
             {% for question_set in question_sets %}

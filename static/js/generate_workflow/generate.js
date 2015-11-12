@@ -2,7 +2,7 @@
  * Created by dfitzgerald on 8/11/15.
  */
 $(document).ready(function(){
-    var getParametersForProgramURL = '/swiftseq/generate-workflow/generate/get-parameters-for-program/';
+    var getParametersForProgramURL = '/generate-workflow/generate/get-parameters-for-program/';
 
     $('.option-checkbox').change(function(){
         /* Get the Step ID, hook it up to respective program panel */
@@ -25,10 +25,10 @@ $(document).ready(function(){
     $('#submitbutton').click(function(){
         $('input').removeAttr('disabled');
         $('<iframe>').attr({
-            src: '/swiftseq/generate-workflow/process-workflow/?' + $('form').serialize(),
+            src: '/generate-workflow/process-workflow/?' + $('form').serialize(),
             style: 'display:none'
         }).appendTo($('body')).ready(function(){
-            window.location.replace('/swiftseq/generate-workflow/download-complete/');
+            window.location.replace('/generate-workflow/download-complete/');
         });
     });
 
