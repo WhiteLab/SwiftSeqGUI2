@@ -4,7 +4,7 @@ from swiftseqgui2.views import (generate_workflow as generate_workflow_views,
 from django.conf import settings
 from django.conf.urls.static import static
 
-urlpatterns = patterns('',
+urlpatterns = [
     # Front-end URL Patterns
     url(r'^$', www_views.index, name='index'),
     url(r'^prebuilt-workflows/$', www_views.prebuilt_workflows, name='prebuilt-workflows'),
@@ -28,4 +28,4 @@ urlpatterns = patterns('',
         name='download-complete')
 
 
-)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
